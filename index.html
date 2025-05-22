@@ -11,7 +11,7 @@
     justify-content: space-between;
     position: relative;
     margin: 40px 0 50px;
-    height: 20px;
+    height: 40px;
   }
 
   .timeline::before {
@@ -20,7 +20,7 @@
     top: 8px;
     left: 0;
     width: 100%;
-    height: 8px;
+    height: 20px;
     background: linear-gradient(
       to right,
       #4caf50 0%,
@@ -46,8 +46,8 @@
   }
 
   .timeline-step .circle {
-    width: 20px;
-    height: 20px;
+    width: 15px;
+    height: 15px;
     border-radius: 50%;
     margin: 0 auto;
     border: 5px solid #444;
@@ -81,7 +81,11 @@
     box-shadow: 0 0 8px rgba(0,0,0,0.08);
     font-size: 14px;
   }
-
+.description-box h3 {
+  color: inherit;
+  font-size: 20px; /* Aquí se diferencia el tamaño del título */
+  margin-bottom: 10px;
+}
   .description-box.active {
     display: block;
   }

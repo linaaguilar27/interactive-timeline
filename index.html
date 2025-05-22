@@ -1,124 +1,107 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <style>
-    body {
-      font-family: "Avenir Next World", sans-serif;
-    }
+<style>
+  .timeline-container {
+    font-family: Arial, sans-serif;
+    background: #f5f9ed;
+    padding: 30px 20px 60px;
+    text-align: center;
+  }
 
-    .timeline-container {
-      background: #f5f9ed;
-      padding: 30px 20px 60px;
-      text-align: center;
-    }
+  .timeline {
+    display: flex;
+    justify-content: space-between;
+    position: relative;
+    margin: 40px 0 50px;
+    height: 20px;
+  }
 
-    .timeline {
-      display: flex;
-      justify-content: space-between;
-      position: relative;
-      margin: 40px 0 50px;
-      height: 10px; /* Adjusted height for timeline line */
-    }
+  .timeline::before {
+    content: "";
+    position: absolute;
+    top: 8px;
+    left: 0;
+    width: 100%;
+    height: 8px;
+    background: linear-gradient(
+      to right,
+      #78BE20 0%,
+      #78BE20 20%,
+      #D4BE97 20%,
+      #D4BE97 40%,
+      #8ABADD 40%,
+      #8ABADD 80%,
+      #A1DA8E 80%,
+      #A1DA8E 98%,
+      transparent 98%
+    );
+    z-index: 1;
+    border-radius: 10px;
+  }
 
-    .timeline::before {
-      content: "";
-      position: absolute;
-      top: 8px; /* Centered the timeline line */
-      left: 0;
-      width: 100%;
-      height: 8px; /* Timeline line height */;
-      transform: translateY(-50%);
-      background: linear-gradient(
-        to right,
-        #78BE20 0%,
-        #78BE20 20%,
-        #D4BE97 20%,
-        #D4BE97 40%,
-        #8ABADD 40%,
-        #8ABADD 80%,
-        #A1DA8E 80%,
-        #A1DA8E 98%,
-        transparent 98%
-      );
-      z-index: 1;
-      border-radius: 10px;
-    }
+  .timeline::after {
+    content: "➤";
+    position: absolute;
+    top: -2px;
+    right: -18px;
+    font-size: 22px;
+    color: #A1DA8E;
+  }
 
-    .timeline::after {
-      content: "➤";
-      position: absolute;
-      top: -2px;
-      right: -18px;
-      font-size: 22px;
-      color: #A1DA8E;
-    }
+  .timeline-step {
+    position: relative;
+    cursor: pointer;
+    z-index: 2;
+    flex: 1;
+  }
 
-    .timeline-step {
-      position: relative;
-      cursor: pointer;
-      z-index: 2;
-      flex: 1;
-    }
+  .timeline-step .circle {
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    margin: 0 auto;
+    border: 6px solid;
+    background: white;
+    transition: background 0.3s;
+  }
 
-    .timeline-step .circle {
-      width: 30px; /* Smaller circle size */
-      height: 30px; /* Smaller circle size */
-      border-radius: 50%;
-      margin: 0 auto;
-      border: 6px solid;
-      background: white;
-      transition: background 0.3s;
-      position: relative;
-      top: 4px; /* Positioned slightly above the line */
-    }
+  .timeline-step.active .circle {
+    background: #285C4D;
+  }
 
-    .timeline-step.active .circle {
-      background: #285C4D;
-    }
+  .timeline-step span {
+    display: block;
+    margin-top: 10px;
+    font-weight: bold;
+    font-size: 16px;
+  }
 
-    .timeline-step span {
-      display: block;
-      margin-top: 40px; /* Increased space from timeline */
-      font-weight: bold;
-      font-size: 24px; /* Same font size as titles inside description boxes */
-      color: #285C4D;
-    }
+  .description-box {
+    display: none;
+    margin-top: 60px;
+    padding: 15px 20px;
+    background: white;
+    border-left: 5px solid;
+    text-align: left;
+    max-width: 500px;
+    margin-left: auto;
+    margin-right: auto;
+    border-radius: 10px;
+    box-shadow: 0 0 8px rgba(0,0,0,0.08);
+    font-size: 14px;
+    color: #285C4D;
+  }
 
-    .description-box {
-      display: none;
-      margin-top: 120px;
-      min-height: 160px;
-      padding: 15px 20px;
-      background: white;
-      border-left: 5px solid;
-      text-align: left;
-      max-width: 500px;
-      margin-left: auto;
-      margin-right: auto;
-      border-radius: 10px;
-      box-shadow: 0 0 8px rgba(0, 0, 0, 0.08);
-      font-size: 14px;
-      color: #285C4D;
-    }
+  .description-box.active {
+    display: block;
+  }
 
-    .description-box.active {
-      display: block;
-    }
+  .description-box ul {
+    padding-left: 20px;
+  }
 
-    .description-box ul {
-      padding-left: 20px;
-    }
-
-    .description-box h3 {
-      color: inherit;
-      font-size: 24px;
-    }
-
-  </style>
-</head>
-<body>
+  .description-box h3 {
+    color: inherit;
+  }
+</style>
 
 <div class="timeline-container">
   <div class="timeline">
@@ -145,7 +128,7 @@
   </div>
 
   <div id="desc-0" class="description-box active" style="border-left-color:#78BE20;">
-    <h3>2024 – Review Phase</h3>
+    <h3 style="color:#78BE20;">2024 – Review Phase</h3>
     <ul>
       <li>Define scope</li>
       <li>Develop Review Report</li>
@@ -153,7 +136,7 @@
   </div>
 
   <div id="desc-1" class="description-box" style="border-left-color:#D4BE97;">
-    <h3>2025 – Conceptual Phase</h3>
+    <h3 style="color:#D4BE97;">2025 – Conceptual Phase</h3>
     <ul>
       <li>Surveys, Interviews, Green Papers</li>
       <li>Public Consultation on concepts (Oct–Nov 2025)</li>
@@ -163,7 +146,7 @@
   </div>
 
   <div id="desc-2" class="description-box" style="border-left-color:#8ABADD;">
-    <h3>2026 – Drafting Phase Begins</h3>
+    <h3 style="color:#8ABADD;">2026 – Drafting Phase Begins</h3>
     <ul>
       <li>Developing first drafts</li>
       <li>Public Consultation on FSC P&C and IGI drafts</li>
@@ -171,35 +154,15 @@
   </div>
 
   <div id="desc-3" class="description-box" style="border-left-color:#8ABADD;">
-    <h3>2027 – Drafting Continues</h3>
+    <h3 style="color:#8ABADD;">2027 – Drafting Continues</h3>
     <p>Continued development and refinement of drafts based on public input.</p>
   </div>
 
   <div id="desc-4" class="description-box" style="border-left-color:#A1DA8E;">
-    <h3>2028 – Decision-making Phase</h3>
+    <h3 style="color:#A1DA8E;">2028 – Decision-making Phase</h3>
     <ul>
       <li>Decision on FSC Principles &amp; Criteria at General Assembly</li>
       <li>Decision on FSC IGIs by FSC Board of Directors</li>
     </ul>
   </div>
 </div>
-
-<script>
-  const steps = document.querySelectorAll('.timeline-step');
-  const descriptions = document.querySelectorAll('.description-box');
-
-  steps.forEach((step, index) => {
-    step.addEventListener('click', () => {
-      // Remove active class from all steps and descriptions
-      steps.forEach(s => s.classList.remove('active'));
-      descriptions.forEach(desc => desc.classList.remove('active'));
-
-      // Add active class to clicked step and corresponding description
-      step.classList.add('active');
-      document.getElementById(`desc-${index}`).classList.add('active');
-    });
-  });
-</script>
-
-</body>
-</html>

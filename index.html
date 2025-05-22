@@ -23,27 +23,19 @@
     height: 8px;
     background: linear-gradient(
       to right,
-      #78BE20 0%,
-      #78BE20 20%,
-      #D4BE97 20%,
-      #D4BE97 40%,
-      #8ABADD 40%,
-      #8ABADD 80%,
-      #A1DA8E 80%,
-      #A1DA8E 98%,
-      transparent 98%
+      #4caf50 0%,
+      #4caf50 20%,
+      #d4a059 20%,
+      #d4a059 40%,
+      #78b5e0 40%,
+      #78b5e0 60%,
+      #78b5e0 60%,
+      #78b5e0 80%,
+      #7ec77b 80%,
+      #7ec77b 100%
     );
     z-index: 1;
     border-radius: 10px;
-  }
-
-  .timeline::after {
-    content: "➤";
-    position: absolute;
-    top: -2px;
-    right: -18px;
-    font-size: 22px;
-    color: #A1DA8E;
   }
 
   .timeline-step {
@@ -54,24 +46,25 @@
   }
 
   .timeline-step .circle {
-    width: 30px;
-    height: 30px;
+    width: 20px;
+    height: 20px;
     border-radius: 50%;
     margin: 0 auto;
-    border: 6px solid;
+    border: 5px solid #444;
     background: white;
     transition: background 0.3s;
   }
 
   .timeline-step.active .circle {
-    background: #285C4D;
+    background: #444;
   }
 
   .timeline-step span {
     display: block;
     margin-top: 10px;
     font-weight: bold;
-    font-size: 16px;
+    color: #333;
+    font-size: 14px;
   }
 
   .description-box {
@@ -87,7 +80,6 @@
     border-radius: 10px;
     box-shadow: 0 0 8px rgba(0,0,0,0.08);
     font-size: 14px;
-    color: #285C4D;
   }
 
   .description-box.active {
@@ -97,46 +89,42 @@
   .description-box ul {
     padding-left: 20px;
   }
-
-  .description-box h3 {
-    color: inherit;
-  }
 </style>
 
 <div class="timeline-container">
   <div class="timeline">
     <div class="timeline-step active">
-      <div class="circle" style="border-color: #78BE20;"></div>
-      <span style="color:#78BE20;">2024</span>
+      <div class="circle" style="border-color: #4caf50;"></div>
+      <span style="color:#4caf50;">2024</span>
     </div>
     <div class="timeline-step">
-      <div class="circle" style="border-color: #D4BE97;"></div>
-      <span style="color:#D4BE97;">2025</span>
+      <div class="circle" style="border-color: #d4a059;"></div>
+      <span style="color:#d4a059;">2025</span>
     </div>
     <div class="timeline-step">
-      <div class="circle" style="border-color: #8ABADD;"></div>
-      <span style="color:#8ABADD;">2026</span>
+      <div class="circle" style="border-color: #78b5e0;"></div>
+      <span style="color:#78b5e0;">2026</span>
     </div>
     <div class="timeline-step">
-      <div class="circle" style="border-color: #8ABADD;"></div>
-      <span style="color:#8ABADD;">2027</span>
+      <div class="circle" style="border-color: #78b5e0;"></div>
+      <span style="color:#78b5e0;">2027</span>
     </div>
     <div class="timeline-step">
-      <div class="circle" style="border-color: #A1DA8E;"></div>
-      <span style="color:#A1DA8E;">2028</span>
+      <div class="circle" style="border-color: #7ec77b;"></div>
+      <span style="color:#7ec77b;">2028</span>
     </div>
   </div>
 
-  <div id="desc-0" class="description-box active" style="border-left-color:#78BE20;">
-    <h3 style="color:#78BE20;">2024 – Review Phase</h3>
+  <div id="desc-0" class="description-box active" style="border-left-color:#4caf50;">
+    <h3>2024 – Review Phase</h3>
     <ul>
       <li>Define scope</li>
       <li>Develop Review Report</li>
     </ul>
   </div>
 
-  <div id="desc-1" class="description-box" style="border-left-color:#D4BE97;">
-    <h3 style="color:#D4BE97;">2025 – Conceptual Phase</h3>
+  <div id="desc-1" class="description-box" style="border-left-color:#d4a059;">
+    <h3>2025 – Conceptual Phase</h3>
     <ul>
       <li>Surveys, Interviews, Green Papers</li>
       <li>Public Consultation on concepts (Oct–Nov 2025)</li>
@@ -145,44 +133,27 @@
     </ul>
   </div>
 
-  <div id="desc-2" class="description-box" style="border-left-color:#8ABADD;">
-    <h3 style="color:#8ABADD;">2026 – Drafting Phase Begins</h3>
+  <div id="desc-2" class="description-box" style="border-left-color:#78b5e0;">
+    <h3>2026 – Drafting Phase Begins</h3>
     <ul>
       <li>Developing first drafts</li>
       <li>Public Consultation on FSC P&C and IGI drafts</li>
     </ul>
   </div>
 
-  <div id="desc-3" class="description-box" style="border-left-color:#8ABADD;">
-    <h3 style="color:#8ABADD;">2027 – Drafting Continues</h3>
+  <div id="desc-3" class="description-box" style="border-left-color:#78b5e0;">
+    <h3>2027 – Drafting Continues</h3>
     <p>Continued development and refinement of drafts based on public input.</p>
   </div>
 
-  <div id="desc-4" class="description-box" style="border-left-color:#A1DA8E;">
-    <h3 style="color:#A1DA8E;">2028 – Decision-making Phase</h3>
+  <div id="desc-4" class="description-box" style="border-left-color:#7ec77b;">
+    <h3>2028 – Decision-making Phase</h3>
     <ul>
       <li>Decision on FSC Principles &amp; Criteria at General Assembly</li>
       <li>Decision on FSC IGIs by FSC Board of Directors</li>
     </ul>
   </div>
 </div>
-
-<script>
-  document.addEventListener("DOMContentLoaded", function () {
-    const steps = document.querySelectorAll(".timeline-step");
-    const descriptions = document.querySelectorAll(".description-box");
-
-    steps.forEach((step, index) => {
-      step.addEventListener("click", () => {
-        steps.forEach(s => s.classList.remove("active"));
-        descriptions.forEach(d => d.classList.remove("active"));
-
-        step.classList.add("active");
-        descriptions[index].classList.add("active");
-      });
-    });
-  });
-</script>
 
 
 

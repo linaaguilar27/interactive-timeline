@@ -26,7 +26,7 @@
     .timeline::before {
       content: "";
       position: absolute;
-      top: 80%;
+      top: 50%;
       transform: translateY(-50%);
       left: 0;
       width: 100%;
@@ -50,10 +50,11 @@
     .timeline::after {
       content: "➤";
       position: absolute;
-      top: 8px;
-      right: 10px;
+      top: 50%;
+      right: -18px; /* Adjusted for end alignment */
       font-size: 30px;
       color: #A1DA8E;
+      transform: translateY(-50%);
     }
 
     .timeline-step {
@@ -61,6 +62,7 @@
       cursor: pointer;
       z-index: 2;
       flex: 1;
+      margin-top: -10px; /* Adjusted to center the circle */
     }
 
     .timeline-step .circle {
@@ -72,6 +74,8 @@
       background: white;
       transition: background 0.3s;
       position: relative;
+      top: 50%; /* Center circle vertically */
+      transform: translateY(-50%);
     }
 
     .timeline-step.active .circle {
@@ -122,11 +126,11 @@
 
 <div class="timeline-container">
   <div class="timeline">
-    <div class="timeline-step active">
+    <div class="timeline-step">
       <div class="circle" style="border-color: #78BE20;"></div>
       <span style="color:#78BE20;">2024</span>
     </div>
-    <div class="timeline-step">
+    <div class="timeline-step active">
       <div class="circle" style="border-color: #D4BE97;"></div>
       <span style="color:#D4BE97;">2025</span>
     </div>
@@ -144,7 +148,7 @@
     </div>
   </div>
 
-  <div id="desc-0" class="description-box active" style="border-left-color:#78BE20;">
+  <div id="desc-0" class="description-box" style="border-left-color:#78BE20;">
     <h3 style="color:#78BE20;">2024 – Review Phase</h3>
     <ul>
       <li>Define scope</li>
@@ -152,7 +156,7 @@
     </ul>
   </div>
 
-  <div id="desc-1" class="description-box" style="border-left-color:#D4BE97;">
+  <div id="desc-1" class="description-box active" style="border-left-color:#D4BE97;">
     <h3 style="color:#D4BE97;">2025 – Conceptual Phase</h3>
     <ul>
       <li>Surveys, Interviews, Green Papers</li>

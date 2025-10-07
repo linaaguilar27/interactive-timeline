@@ -195,5 +195,21 @@
 
 <script>
   const steps = document.querySelectorAll('.timeline-step');
-  const descriptions
+  const descriptions = document.querySelectorAll('.description-box');
+
+  steps.forEach((step, index) => {
+    step.addEventListener('click', () => {
+      // Remove active class from all steps and descriptions
+      steps.forEach(s => s.classList.remove('active'));
+      descriptions.forEach(d => d.classList.remove('active'));
+
+      // Activate clicked step and its corresponding description
+      step.classList.add('active');
+      descriptions[index].classList.add('active');
+    });
+  });
+</script>
+
+</body>
+</html>
 

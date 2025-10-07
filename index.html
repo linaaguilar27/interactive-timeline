@@ -2,204 +2,190 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>PCI Timeline</title>
+  <title>Accordion Timeline</title>
   <style>
     body {
-      font-family: "Greycliff CF", sans-serif;
+      color: #285C4D;
+      font-family: 'Greycliff CF', sans-serif;
+      line-height: 1.75;
+    }
+
+    a {
+      color: #285C4D;
+      text-decoration: underline;
+      font-weight: bold;
+    }
+
+    a:visited {
       color: #285C4D;
     }
 
-    .timeline-container {
-      background: #f5f9ed;
-      padding: 30px 20px 60px;
-      text-align: center;
+    .accordion {
+      margin-bottom: 20px;
+      border-bottom: 1px solid #ccc;
     }
 
-    .timeline {
-      display: flex;
-      justify-content: space-between;
-      position: relative;
-      margin: 40px 0 50px;
-      height: 10px;
-    }
-
-    .timeline::before {
-      content: "";
-      position: absolute;
-      top: 50%;
-      transform: translateY(-50%);
-      left: 0;
-      width: 100%;
-      height: 16px;
-      background: linear-gradient(
-        to right,
-        #78BE20 0%,
-        #78BE20 20%,
-        #D4BE97 20%,
-        #D4BE97 40%,
-        #8ABADD 40%,
-        #8ABADD 80%,
-        #A1DA8E 80%,
-        #A1DA8E 98%,
-        transparent 98%
-      );
-      z-index: 1;
-      border-radius: 10px;
-    }
-
-    .timeline::after {
-      content: "➤";
-      position: absolute;
-      top: 50%;
-      right: -18px;
-      font-size: 30px;
-      color: #A1DA8E;
-      transform: translateY(-50%);
-    }
-
-    .timeline-step {
-      position: relative;
+    .accordion .step {
+      font-family: 'Greycliff CF Extra', sans-serif;
+      font-size: 20px;
       cursor: pointer;
-      z-index: 2;
-      flex: 1;
-      margin-top: -8px;
-    }
-
-    .timeline-step .circle {
-      width: 20px;
-      height: 20px;
-      border-radius: 50%;
-      margin: 0 auto;
-      border: 6px solid;
-      background: white;
-      transition: background 0.3s;
+      padding: 10px 15px;
       position: relative;
-      top: 50%;
-      transform: translateY(-50%);
+      background-color: #f5f9ed;
+      border-left: 5px solid #78BE20;
     }
 
-    .timeline-step.active .circle {
-      background: #285C4D;
+    .accordion .step:hover {
+      background-color: #e2f1d4;
     }
 
-    .timeline-step span {
-      display: block;
-      margin-top: 10px;
-      font-weight: bold;
+    .step .arrow {
+      float: right;
       font-size: 24px;
+      transition: transform 0.3s ease;
+      display: inline-block;
+      transform: rotate(90deg);
     }
 
-    .description-box {
+    .accordion.active .step .arrow {
+      transform: rotate(-90deg);
+    }
+
+    .accordion .items {
       display: none;
-      margin-top: 100px;
-      min-height: 150px;
       padding: 15px 20px;
-      background: white;
-      border-left: 5px solid;
-      text-align: left;
-      max-width: 500px;
-      margin-left: auto;
-      margin-right: auto;
-      border-radius: 10px;
-      box-shadow: 0 0 8px rgba(0, 0, 0, 0.08);
-      font-size: 16px;
+      text-align: justify;
+      background-color: #fff;
+      border-left: 5px solid #d9e7cb;
+      box-shadow: 0 0 6px rgba(0,0,0,0.05);
     }
 
-    .description-box.active {
+    .accordion.active .items {
       display: block;
     }
 
-    .description-box ul {
+    .section-title {
+      font-family: 'Greycliff CF Extra', sans-serif;
+      font-weight: bold;
+      margin-top: 10px;
+    }
+
+    .section-content {
+      line-height: 26px;
+    }
+
+    ul {
+      margin-bottom: 1rem;
       padding-left: 20px;
     }
 
-    .description-box h3 {
-      font-size: 24px;
-      font-weight: normal;
+    p {
+      margin-bottom: 1rem;
     }
   </style>
 </head>
 <body>
 
-<div class="timeline-container">
-  <div class="timeline">
-    <div class="timeline-step">
-      <div class="circle" style="border-color: #78BE20;"></div>
-      <span style="color:#78BE20;">2024</span>
-    </div>
-    <div class="timeline-step active">
-      <div class="circle" style="border-color: #D4BE97;"></div>
-      <span style="color:#D4BE97;">2025</span>
-    </div>
-    <div class="timeline-step">
-      <div class="circle" style="border-color: #8ABADD;"></div>
-      <span style="color:#8ABADD;">2026</span>
-    </div>
-    <div class="timeline-step">
-      <div class="circle" style="border-color: #8ABADD;"></div>
-      <span style="color:#8ABADD;">2027</span>
-    </div>
-    <div class="timeline-step">
-      <div class="circle" style="border-color: #A1DA8E;"></div>
-      <span style="color:#A1DA8E;">2028</span>
-    </div>
-  </div>
+<!-- NEW SECTION -->
+<div class="accordion">
+  <div class="step">October 1 – November 30, 2025 <span class="arrow">&#8250;</span></div>
+  <div class="items">
+    <div class="section-title">Public Consultations on PCI Revision</div>
+    <div class="section-content">
+      <p>FSC launches consultations on the revision of its Principles and Criteria, International Generic Indicators, and other forest management normative documents (collectively referred to as PCI).</p>
+      <p>The consultation is open from <strong>01 October 2025</strong> until <strong>30 November 2025</strong>.</p>
+      <p>Consultation is available in English, Spanish, and French on the FSC Consultation Platform. Please see the <strong>Consultation Content</strong>, <strong>Consultation Overview</strong>, and the <strong>Consultation Guideline</strong> for further details.</p>
 
-  <div id="desc-0" class="description-box" style="border-left-color:#78BE20;">
-    <h3 style="color:#78BE20;">2024 – Review Phase</h3>
-    <ul>
-      <li>Define scope</li>
-      <li>Develop Review Report</li>
-    </ul>
-  </div>
+      <div class="section-title">Upcoming Webinars</div>
+      <p>To facilitate participation in the public consultation, webinars will be held in English with simultaneous translation into Spanish and French. These webinars will provide an overview of the consultation process and address questions and comments from participants.</p>
 
-  <div id="desc-1" class="description-box active" style="border-left-color:#D4BE97;">
-    <h3 style="color:#D4BE97;">2025 – Conceptual Phase</h3>
-    <ul>
-      <li><a href="https://pci.fsc.org/pages/746912f638a54b8bb61dd164b12ae016" target="_blank" style="color: #D4BE97; text-decoration: underline;">Surveys, Interviews, Green Papers</a></li>
-      <li><a href="https://consultation-platform.fsc.org/" target="_blank" style="color: #D4BE97; text-decoration: underline;">Public consultation on concepts</a> will run from October 1 to November 30, 2025, in all FSC languages.</li>
-      <li>The consultation is available in English, Spanish, and French on the FSC Consultation Platform, and it is open from 01 October 2025 until 30 November.</li>
-      <li>Develop Terms of Reference for Working Groups</li>
-      <li>Establish Working Groups</li>
-    </ul>
-  </div>
+      <p><strong>Overview of Forest Management Consultations (14 October 2025)</strong></p>
+      <ul>
+        <li><strong>Morning:</strong> 09:00 – 10:30 CEST, in English only. <a href="#">Register here</a>.</li>
+        <li><strong>Afternoon:</strong> 16:00 – 17:30 CEST, with simultaneous translation to French and Spanish. <a href="#">Register here</a>.</li>
+      </ul>
 
-  <div id="desc-2" class="description-box" style="border-left-color:#8ABADD;">
-    <h3 style="color:#8ABADD;">2026 – Drafting Phase Begins</h3>
-    <ul>
-      <li>Developing first drafts</li>
-      <li>Public Consultation on FSC P&C and IGI drafts</li>
-    </ul>
-  </div>
-
-  <div id="desc-3" class="description-box" style="border-left-color:#8ABADD;">
-    <h3 style="color:#8ABADD;">2027 – Drafting Continues</h3>
-    <p>Continued development and refinement of drafts based on public input.</p>
-  </div>
-
-  <div id="desc-4" class="description-box" style="border-left-color:#A1DA8E;">
-    <h3 style="color:#A1DA8E;">2028 – Decision-making Phase</h3>
-    <ul>
-      <li>Decision on FSC Principles &amp; Criteria at General Assembly</li>
-      <li>Decision on FSC IGIs by FSC Board of Directors</li>
-    </ul>
+      <p><strong>PCI Consultation Webinar (20 November 2025)</strong></p>
+      <ul>
+        <li><strong>Morning:</strong> 09:00 – 10:30 CEST, in English only. <a href="#">Register here</a>.</li>
+        <li><strong>Afternoon:</strong> 16:00 – 17:30 CEST, with simultaneous translation to French and Spanish. <a href="#">Register here</a>.</li>
+      </ul>
+    </div>
   </div>
 </div>
 
+<!-- EXISTING ACCORDION SECTIONS -->
+
+<div class="accordion">
+  <div class="step">June 2025 <span class="arrow">&#8250;</span></div>
+  <div class="items">
+    <div class="section-content">
+      <p>The Joint Review Report of FSC Principles and Criteria, International Generic Indicators, and other Forest Management normative documents is published. Click <a href="https://connect.fsc.org/media/jointreviewreportpciandotherfmnormativedocumentspdf" target="_blank">here</a> to read the report.</p>
+    </div>
+  </div>
+</div>
+
+<div class="accordion">
+  <div class="step">April – July 2025 <span class="arrow">&#8250;</span></div>
+  <div class="items">
+    <div class="section-title">Key topic webinars for FSC Principles, Criteria, and Indicators revision</div>
+    <div class="section-content">
+      <p><strong>Social Aspects (30 April 2025)</strong></p>
+      <ul>
+        <li>09:00 – 10:30 CEST, English only</li>
+        <li>16:00 – 17:30 CEST, with Spanish & French translation</li>
+      </ul>
+      <p>Presentation: <a href="https://connect.fsc.org/media/fsc-introduction-pc-and-igisocialwebinar2025pdf" target="_blank">English</a> | Q&A: <a href="https://connect.fsc.org/media/fsc-introduction-pc-and-igisocialwebinar2025qapdf" target="_blank">here</a></p>
+
+      <p><strong>Climate Change and Biodiversity (25 June 2025)</strong></p>
+      <ul>
+        <li>09:00 – 10:30 CEST, English only</li>
+        <li>16:00 – 17:30 CEST, with Spanish & French translation</li>
+      </ul>
+      <p>Presentation: <a href="https://connect.fsc.org/media/pci-revisionwebinarclimate-changebiodiversity2025pdf" target="_blank">English</a></p>
+
+      <p><strong>Outcome Orientation (9 July 2025)</strong></p>
+      <ul>
+        <li>09:00 – 10:30 CEST, English only</li>
+        <li>16:00 – 17:30 CEST, with Spanish & French translation</li>
+      </ul>
+      <p>Presentation: <a href="https://connect.fsc.org/media/pci-revisionwebinaroutcome-orientation2025pdf" target="_blank">English</a></p>
+    </div>
+  </div>
+</div>
+
+<div class="accordion">
+  <div class="step">December 2024 <span class="arrow">&#8250;</span></div>
+  <div class="items">
+    <div class="section-content">
+      <p><strong>Webinars on the P&amp;C and IGI Revision Process</strong></p>
+      <p>FSC hosted two webinars to introduce its members to the joint revision process of the FSC Principles &amp; Criteria (P&amp;C) and the International Generic Indicators (IGI).</p>
+      <p>Presentation: 
+        <a href="https://connect.fsc.org/media/webinar06122024enpdf-0" target="_blank">English</a> | 
+        <a href="https://connect.fsc.org/es/media/webinar06122024sppdf" target="_blank">Spanish</a> | 
+        <a href="https://connect.fsc.org/fr/media/webinar06122024frpdf" target="_blank">French</a>
+      </p>
+      <ul>
+        <li>Dec 6, 09:00–10:30 CET</li>
+        <li>Dec 6, 16:30–18:00 CET (with translation)</li>
+      </ul>
+    </div>
+  </div>
+</div>
+
+<div class="accordion">
+  <div class="step">October 2024 <span class="arrow">&#8250;</span></div>
+  <div class="items">
+    <div class="section-content">
+      <p>29 October: Kick off the process.</p>
+    </div>
+  </div>
+</div>
+
+<!-- SCRIPT FOR ACCORDION -->
 <script>
-  const steps = document.querySelectorAll('.timeline-step');
-  const descriptions = document.querySelectorAll('.description-box');
+  const accordions = document.querySelectorAll('.accordion');
 
-  steps.forEach((step, index) => {
-    step.addEventListener('click', () => {
-      steps.forEach(s => s.classList.remove('active'));
-      descriptions.forEach(desc => desc.classList.remove('active'));
-      step.classList.add('active');
-      document.getElementById(`desc-${index}`).classList.add('active');
-    });
-  });
-</script>
+  accordions.forEach(accordion => {
+    const step = accordion.query
 
-</body>
-</html>

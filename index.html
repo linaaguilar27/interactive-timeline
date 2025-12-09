@@ -1,2 +1,244 @@
-<!DOCTYPE html> <html lang="en"> <head> <meta charset="UTF-8"> <meta name="viewport" content="width=device-width, initial-scale=1.0"> <title>PCI Timeline</title> <style> body { font-family: "Greycliff CF", sans-serif; color: #285C4D; } .timeline-container { background: #f5f9ed; padding: 30px 20px 60px; text-align: center; } .timeline { display: flex; justify-content: space-between; position: relative; margin: 40px 0 50px; height: 10px; } .timeline::before { content: ""; position: absolute; top: 50%; transform: translateY(-50%); left: 0; width: 100%; height: 16px; background: linear-gradient( to right, #78BE20 0%, #78BE20 20%, #D4BE97 20%, #D4BE97 40%, #8ABADD 40%, #8ABADD 80%, #A1DA8E 80%, #A1DA8E 98%, transparent 98% ); z-index: 1; border-radius: 10px; } .timeline::after { content: "➤"; position: absolute; top: 50%; right: -18px; font-size: 30px; color: #A1DA8E; transform: translateY(-50%); } .timeline-step { position: relative; cursor: pointer; z-index: 2; flex: 1; margin-top: -8px; } .timeline-step .circle { width: 20px; height: 20px; border-radius: 50%; margin: 0 auto; border: 6px solid; background: white; transition: background 0.3s; position: relative; top: 50%; transform: translateY(-50%); } .timeline-step.active .circle { background: #285C4D; } .timeline-step span { display: block; margin-top: 10px; font-weight: bold; font-size: 24px; } .description-box { display: none; margin-top: 100px; min-height: 150px; padding: 15px 20px; background: white; border-left: 5px solid; text-align: left; max-width: 500px; margin-left: auto; margin-right: auto; border-radius: 10px; box-shadow: 0 0 8px rgba(0, 0, 0, 0.08); font-size: 16px; } .description-box.active { display: block; } .description-box ul { padding-left: 20px; } .description-box h3 { font-size: 24px; font-weight: normal; } </style> </head> <body> <div class="timeline-container"> <div class="timeline"> <div class="timeline-step"> <div class="circle" style="border-color: #78BE20;"></div> <span style="color:#78BE20;">2024</span> </div> <div class="timeline-step active"> <div class="circle" style="border-color: #D4BE97;"></div> <span style="color:#D4BE97;">2025</span> </div> <div class="timeline-step"> <div class="circle" style="border-color: #8ABADD;"></div> <span style="color:#8ABADD;">2026</span> </div> <div class="timeline-step"> <div class="circle" style="border-color: #8ABADD;"></div> <span style="color:#8ABADD;">2027</span> </div> <div class="timeline-step"> <div class="circle" style="border-color: #A1DA8E;"></div> <span style="color:#A1DA8E;">2028</span> </div> </div> <div id="desc-0" class="description-box" style="border-left-color:#78BE20;"> <h3 style="color:#78BE20;">2024 – Review Phase</h3> <ul> <li>Define scope</li> <li>Develop Review Report</li> </ul> </div> <div id="desc-1" class="description-box active" style="border-left-color:#D4BE97;"> <h3 style="color:#D4BE97;">2025 – Conceptual Phase</h3> <ul> <li><a href="https://pci.fsc.org/pages/746912f638a54b8bb61dd164b12ae016" target="_blank" style="color: #D4BE97; text-decoration: underline;">Surveys, Interviews, Green Papers</a></li> <li> Public consultation on concepts will run from October 1 to November 30, 2025, and it is available in the FSC official languages: <ul> <li><a href="https://consultation-platform.fsc.org/en/consultations/take/cba255184e6e13" target="_blank" style="color: #D4BE97; text-decoration: underline;">English</a></li> <li><a href="https://consultation-platform.fsc.org/es/consultations/take/cba255184e6e13" target="_blank" style="color: #D4BE97; text-decoration: underline;">Spanish</a></li> <li><a href="https://consultation-platform.fsc.org/en/consultations/take/cf1d5990bdf24" target="_blank" style="color: #D4BE97; text-decoration: underline;">French</a></li> </ul> </li> <li>Develop Terms of Reference for Working Groups</li> <li>Establish Working Groups <ul> <li><a href="https://www.surveymonkey.com/r/YZKDLWT" target="_blank" style="color: #D4BE97; text-decoration: underline;">Apply for Working Group</a></li> <li><a href="https://www.surveymonkey.com/r/YZV3SS9" target="_blank" style="color: #D4BE97; text-decoration: underline;">Join the Consultative Forums</a></li> </ul> </li> </ul> </div> <div id="desc-2" class="description-box" style="border-left-color:#8ABADD;"> <h3 style="color:#8ABADD;">2026 – Drafting Phase Begins</h3> <ul> <li>Developing first drafts</li> <li>Public Consultation on FSC P&C and IGI drafts</li> </ul> </div> <div id="desc-3" class="description-box" style="border-left-color:#8ABADD;"> <h3 style="color:#8ABADD;">2027 – Drafting Continues</h3> <p>Continued development and refinement of drafts based on public input.</p> </div> <div id="desc-4" class="description-box" style="border-left-color:#A1DA8E;"> <h3 style="color:#A1DA8E;">2028 – Decision-making Phase</h3> <ul> <li>Decision on FSC Principles &amp; Criteria at General Assembly</li> <li>Decision on FSC IGIs by FSC Board of Directors</li> </ul> </div> </div> <script> const steps = document.querySelectorAll('.timeline-step'); const descriptions = document.querySelectorAll('.description-box'); steps.forEach((step, index) => { step.addEventListener('click', () => { // Remove active class from all steps and descriptions steps.forEach(s => s.classList.remove('active')); descriptions.forEach(d => d.classList.remove('active')); // Activate clicked step and its corresponding description step.classList.add('active'); descriptions[index].classList.add('active'); }); }); </script> </body> </html>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PCI Timeline</title>
+
+    <style>
+        body {
+            font-family: "Greycliff CF", sans-serif;
+            color: #285C4D;
+        }
+
+        .timeline-container {
+            background: #f5f9ed;
+            padding: 30px 20px 60px;
+            text-align: center;
+        }
+
+        .timeline {
+            display: flex;
+            justify-content: space-between;
+            position: relative;
+            margin: 40px 0 50px;
+            height: 10px;
+        }
+
+        .timeline::before {
+            content: "";
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            left: 0;
+            width: 100%;
+            height: 16px;
+            background: linear-gradient(
+                to right,
+                #78BE20 0%,
+                #78BE20 20%,
+                #D4BE97 20%,
+                #D4BE97 40%,
+                #8ABADD 40%,
+                #8ABADD 80%,
+                #A1DA8E 80%,
+                #A1DA8E 98%,
+                transparent 98%
+            );
+            z-index: 1;
+            border-radius: 10px;
+        }
+
+        .timeline::after {
+            content: "➤";
+            position: absolute;
+            top: 50%;
+            right: -18px;
+            font-size: 30px;
+            color: #A1DA8E;
+            transform: translateY(-50%);
+        }
+
+        .timeline-step {
+            position: relative;
+            cursor: pointer;
+            z-index: 2;
+            flex: 1;
+            margin-top: -8px;
+        }
+
+        .timeline-step .circle {
+            width: 20px;
+            height: 20px;
+            border-radius: 50%;
+            margin: 0 auto;
+            border: 6px solid;
+            background: white;
+            transition: background 0.3s;
+            position: relative;
+            top: 50%;
+            transform: translateY(-50%);
+        }
+
+        .timeline-step.active .circle {
+            background: #285C4D;
+        }
+
+        .timeline-step span {
+            display: block;
+            margin-top: 10px;
+            font-weight: bold;
+            font-size: 24px;
+        }
+
+        .description-box {
+            display: none;
+            margin-top: 100px;
+            min-height: 150px;
+            padding: 15px 20px;
+            background: white;
+            border-left: 5px solid;
+            text-align: left;
+            max-width: 500px;
+            margin-left: auto;
+            margin-right: auto;
+            border-radius: 10px;
+            box-shadow: 0 0 8px rgba(0, 0, 0, 0.08);
+            font-size: 16px;
+        }
+
+        .description-box.active {
+            display: block;
+        }
+
+        .description-box ul {
+            padding-left: 20px;
+        }
+
+        .description-box h3 {
+            font-size: 24px;
+            font-weight: normal;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="timeline-container">
+
+        <div class="timeline">
+            <div class="timeline-step">
+                <div class="circle" style="border-color: #78BE20;"></div>
+                <span style="color:#78BE20;">2024</span>
+            </div>
+
+            <div class="timeline-step active">
+                <div class="circle" style="border-color: #D4BE97;"></div>
+                <span style="color:#D4BE97;">2025</span>
+            </div>
+
+            <div class="timeline-step">
+                <div class="circle" style="border-color: #8ABADD;"></div>
+                <span style="color:#8ABADD;">2026</span>
+            </div>
+
+            <div class="timeline-step">
+                <div class="circle" style="border-color: #8ABADD;"></div>
+                <span style="color:#8ABADD;">2027</span>
+            </div>
+
+            <div class="timeline-step">
+                <div class="circle" style="border-color: #A1DA8E;"></div>
+                <span style="color:#A1DA8E;">2028</span>
+            </div>
+        </div>
+
+        <div id="desc-0" class="description-box" style="border-left-color:#78BE20;">
+            <h3 style="color:#78BE20;">2024 – Review Phase</h3>
+            <ul>
+                <li>Define scope</li>
+                <li>Develop Review Report</li>
+            </ul>
+        </div>
+
+        <div id="desc-1" class="description-box active" style="border-left-color:#D4BE97;">
+            <h3 style="color:#D4BE97;">2025 – Conceptual Phase</h3>
+            <ul>
+                <li>
+                    <a href="https://pci.fsc.org/pages/746912f638a54b8bb61dd164b12ae016" target="_blank"
+                       style="color: #D4BE97; text-decoration: underline;">Surveys, Interviews, Green Papers</a>
+                </li>
+
+                <li>
+                    Public consultation on concepts will run from October 1 to December 31, 2025, and it is available in
+                    the FSC official languages:
+                    <ul>
+                        <li>
+                            <a href="https://consultation-platform.fsc.org/en/consultations/take/cba255184e6e13"
+                               target="_blank" style="color: #D4BE97; text-decoration: underline;">English</a>
+                        </li>
+                        <li>
+                            <a href="https://consultation-platform.fsc.org/es/consultations/take/cba255184e6e13"
+                               target="_blank" style="color: #D4BE97; text-decoration: underline;">Spanish</a>
+                        </li>
+                        <li>
+                            <a href="https://consultation-platform.fsc.org/en/consultations/take/cf1d5990bdf24"
+                               target="_blank" style="color: #D4BE97; text-decoration: underline;">French</a>
+                        </li>
+                    </ul>
+                </li>
+
+                <li>Develop Terms of Reference for Working Groups</li>
+
+                <li>
+                    Establish Working Groups
+                    <ul>
+                        <li>
+                            <a href="https://www.surveymonkey.com/r/YZV3SS9" target="_blank"
+                               style="color: #D4BE97; text-decoration: underline;">Join the Consultative Forums</a>
+                        </li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+
+        <div id="desc-2" class="description-box" style="border-left-color:#8ABADD;">
+            <h3 style="color:#8ABADD;">2026 – Drafting Phase Begins</h3>
+            <ul>
+                <li>Developing first drafts</li>
+                <li>Public Consultation on FSC P&C and IGI drafts</li>
+            </ul>
+        </div>
+
+        <div id="desc-3" class="description-box" style="border-left-color:#8ABADD;">
+            <h3 style="color:#8ABADD;">2027 – Drafting Continues</h3>
+            <p>Continued development and refinement of drafts based on public input.</p>
+        </div>
+
+        <div id="desc-4" class="description-box" style="border-left-color:#A1DA8E;">
+            <h3 style="color:#A1DA8E;">2028 – Decision-making Phase</h3>
+            <ul>
+                <li>Decision on FSC Principles &amp; Criteria at General Assembly</li>
+                <li>Decision on FSC IGIs by FSC Board of Directors</li>
+            </ul>
+        </div>
+
+    </div>
+
+    <script>
+        const steps = document.querySelectorAll('.timeline-step');
+        const descriptions = document.querySelectorAll('.description-box');
+
+        steps.forEach((step, index) => {
+            step.addEventListener('click', () => {
+                steps.forEach(s => s.classList.remove('active'));
+                descriptions.forEach(d => d.classList.remove('active'));
+
+                step.classList.add('active');
+                descriptions[index].classList.add('active');
+            });
+        });
+    </script>
+</body>
+</html>
+
 

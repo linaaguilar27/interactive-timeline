@@ -98,7 +98,7 @@
       background: white;
       border-left: 5px solid;
       text-align: left;
-      max-width: 500px;
+      max-width: 650px;
       margin-left: auto;
       margin-right: auto;
       border-radius: 10px;
@@ -146,54 +146,81 @@
     </div>
   </div>
 
+  <!-- 2024 -->
   <div id="desc-0" class="description-box" style="border-left-color:#78BE20;">
-    <h3 style="color:#78BE20;">2024 – Review Phase</h3>
+    <h3 style="color:#78BE20;">2024 – Process Kick-off & Introductory Webinars</h3>
     <ul>
-      <li>Define scope</li>
-      <li>Develop Review Report</li>
+      <li><strong>29 October 2024</strong> – Official launch of the joint revision process of P&C, IGI, and Forest Management documents.</li>
+      <li><strong>6 December 2024</strong> – Introductory Webinars:
+        <ul>
+          <li>09:00–10:30 CET (English only)</li>
+          <li>16:30–18:00 CET (with ES/FR translation)</li>
+        </ul>
+      </li>
+      <li>Presentations available in English, Spanish and French.</li>
     </ul>
   </div>
 
+  <!-- 2025 -->
   <div id="desc-1" class="description-box active" style="border-left-color:#D4BE97;">
-    <h3 style="color:#D4BE97;">2025 – Conceptual Phase</h3>
+    <h3 style="color:#D4BE97;">2025 – Consultations, Working Groups & Key Webinars</h3>
     <ul>
-      <li><a href="https://pci.fsc.org/pages/746912f638a54b8bb61dd164b12ae016" target="_blank" style="color: #D4BE97; text-decoration: underline;">Surveys, Interviews, Green Papers</a></li>
-      <li>
-        Public consultation on concepts will run from October 1 to November 30, 2025, and it is available in the FSC official languages:
+      <li><strong>April–July 2025 – Key Topic Webinars</strong>
         <ul>
-          <li><a href="https://consultation-platform.fsc.org/en/consultations/take/cba255184e6e13" target="_blank" style="color: #D4BE97; text-decoration: underline;">English</a></li>
-          <li><a href="https://consultation-platform.fsc.org/es/consultations/take/cba255184e6e13" target="_blank" style="color: #D4BE97; text-decoration: underline;">Spanish</a></li>
-          <li><a href="https://consultation-platform.fsc.org/en/consultations/take/cf1d5990bdf24" target="_blank" style="color: #D4BE97; text-decoration: underline;">French</a></li>
+          <li>Social Aspects (30 April)</li>
+          <li>Climate Change & Biodiversity (25 June)</li>
+          <li>Outcome Orientation (9 July)</li>
         </ul>
       </li>
-      <li>Develop Terms of Reference for Working Groups</li>
-      <li>Establish Working Groups
+
+      <li><strong>June 2025 – Joint Review Report published</strong></li>
+
+      <li><strong>15 October – 30 November 2025</strong> – Call for Working Group & Consultative Forums:
         <ul>
-          <li><a href="https://www.surveymonkey.com/r/YZKDLWT" target="_blank" style="color: #D4BE97; text-decoration: underline;">Apply for Working Group</a></li>
-          <li><a href="https://www.surveymonkey.com/r/YZV3SS9" target="_blank" style="color: #D4BE97; text-decoration: underline;">Join the Consultative Forums</a></li>
+          <li>Applications open for Working Group and Consultative Forums</li>
+          <li>Draft Terms of Reference published</li>
+          <li>Working Group supported by experts, facilitator, youth representative, FSC staff</li>
+        </ul>
+      </li>
+
+      <li><strong>1 October – 31 December 2025</strong> – Public Consultation on PCI Revision:
+        <ul>
+          <li>Covers P&C, IGI and FM normative documents</li>
+          <li>Available in English, Spanish, French</li>
+          <li>Includes Consultation Content, Overview, and Guidelines</li>
+        </ul>
+      </li>
+
+      <li><strong>October – November 2025 – Consultation Webinars</strong>
+        <ul>
+          <li>14 October – Overview of FM Consultations</li>
+          <li>20 November – PCI Consultation Webinar</li>
         </ul>
       </li>
     </ul>
   </div>
 
+  <!-- 2026 -->
   <div id="desc-2" class="description-box" style="border-left-color:#8ABADD;">
     <h3 style="color:#8ABADD;">2026 – Drafting Phase Begins</h3>
     <ul>
-      <li>Developing first drafts</li>
-      <li>Public Consultation on FSC P&C and IGI drafts</li>
+      <li>Development of first drafts</li>
+      <li>Public Consultation on draft versions of P&C and IGI</li>
     </ul>
   </div>
 
+  <!-- 2027 -->
   <div id="desc-3" class="description-box" style="border-left-color:#8ABADD;">
-    <h3 style="color:#8ABADD;">2027 – Drafting Continues</h3>
-    <p>Continued development and refinement of drafts based on public input.</p>
+    <h3 style="color:#8ABADD;">2027 – Draft Refinement</h3>
+    <p>Continued development and refinement of drafts based on public and stakeholder input.</p>
   </div>
 
+  <!-- 2028 -->
   <div id="desc-4" class="description-box" style="border-left-color:#A1DA8E;">
-    <h3 style="color:#A1DA8E;">2028 – Decision-making Phase</h3>
+    <h3 style="color:#A1DA8E;">2028 – Final Decision-making</h3>
     <ul>
-      <li>Decision on FSC Principles &amp; Criteria at General Assembly</li>
-      <li>Decision on FSC IGIs by FSC Board of Directors</li>
+      <li>Decision on FSC Principles & Criteria at the General Assembly</li>
+      <li>Decision on FSC IGIs by the FSC Board of Directors</li>
     </ul>
   </div>
 </div>
@@ -204,11 +231,9 @@
 
   steps.forEach((step, index) => {
     step.addEventListener('click', () => {
-      // Remove active class from all steps and descriptions
       steps.forEach(s => s.classList.remove('active'));
       descriptions.forEach(d => d.classList.remove('active'));
 
-      // Activate clicked step and its corresponding description
       step.classList.add('active');
       descriptions[index].classList.add('active');
     });
